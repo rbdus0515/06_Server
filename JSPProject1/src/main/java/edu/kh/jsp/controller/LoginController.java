@@ -45,6 +45,43 @@ public class LoginController extends HttpServlet{
 		// -> webapp 폴더 기준으로 경로를 작성
 		RequestDispatcher dispatcher
 			= req.getRequestDispatcher("/WEB-INF/views/loginResult.jsp");
+	
+		// message 값을 속성(attribute)으로 추가
+		// -> Map 형식으로 작성 (K:V)
+		
+		req.setAttribute("message", message);
+		
+		// --------------------------------
+		// *** forward ***
+		
+		// 전송하다, 전달하다, 보내다
+		
+		// forward를 하면
+		// 주소창이 요청 주소 바뀌고
+		// 그 요청에 맞는 화면으로 변함
+		// 요청에 맞는 응답을 했기 떄문에
+		
+		// -> Servlet이 가지고 있던 req, resp 객체를
+		// 		JSP에게 전달하여 요청을 위임함
+		dispatcher.forward(req, resp);
+		
+		
+	
 	}
 
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
