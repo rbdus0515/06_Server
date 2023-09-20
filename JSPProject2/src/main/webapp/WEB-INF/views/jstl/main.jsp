@@ -1,7 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>    
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 
 <%-- 
@@ -24,6 +24,38 @@
     <title>JSTL(Jsp Standard Tag Library)</title>
 </head>
 <body>
+
+	<!-- 상대경로 : 현재 경로가 중요함! 
+	
+		현재 경로 : localhost:8080/jstl/main
+		목표 경로 : localhost:8080/jstl/condition
+	-->
+	<a href="condition">JSTL을 이용한 조건문(if / choose, when, otherwise)</a>
+	
+	<br>
+	<!-- 상대경로 : 현재 경로가 중요함! 
+	
+		현재 경로 : localhost:8080/jstl/main
+		목표 경로 : localhost:8080/jstl/loop
+	-->
+	<a href="loop">JSTL을 이용한 반복문</a>
+	<br>
+
+
+
+	<a href="student/selectAll">workbook에서 학생 전체 조회하기</a>
+	
+
+	<a href="student/selectArch">workbook에서 건축공학과인 학생 조회하기</a>
+	
+	<form action="student/selectOne" method="post">
+		<input type="text name=deptName">
+		<button>찾기</button>
+	</form>
+	
+
+
+
     <h1>JSTL(Jsp Standard Tag Library, JSP 표준 태그 라이브러리)</h1>
 
     <pre>

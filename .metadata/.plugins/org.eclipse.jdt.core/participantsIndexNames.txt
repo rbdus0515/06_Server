@@ -7,5 +7,7 @@ C:\규연\workspace\6_Server\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch
 \JSPProject2\src\main\java
 C:\규연\workspace\6_Server\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\2210145245.index
 \ServletProject\src\main\java
+C:\규연\workspace\6_Server\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3977689548.index
+\JSPProject2\src\main\java
 C:\규연\workspace\6_Server\.metadata\.plugins\org.eclipse.jst.jsp.core\jspsearch\3765535236.index
 \JSPProject1\src\main\java
