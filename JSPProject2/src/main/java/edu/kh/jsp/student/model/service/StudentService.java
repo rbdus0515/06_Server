@@ -40,5 +40,16 @@ public class StudentService {
 		return archList;
 	}
 
+	public List<Student> selectOne(String deptName) throws Exception {
+		
+		Connection conn = getConnection();
+		
+		List<Student> stdList = dao.selectOne(conn, deptName);
+		
+		close(conn);
+		
+		return stdList;
+	}
+
 
 }

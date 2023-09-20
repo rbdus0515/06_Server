@@ -117,9 +117,40 @@ public class StudentDAO {
 		return archList;
 	}
 
-	
-}
+	public List<Student> selectOne(Connection conn, String deptName) throws Exception {
+		
+		List<Student> stdList = new ArrayList<Student>();
+		
+		try {
+			
+			String sql = prop.getProperty("selectOne");
+			
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setString(1, deptName);
+			
+			rs = pstmt.executeQuery();
+			
+			while(rs.next()) {
 
+				String studentNo = rs.getString("STUDENT_NO");
+				String studentName = rs.getString("STUDENT_NAME");
+				String studentAddress = rs.getString("STUDENT_ADDRESS");
+				String departmentName = rs.getString("DEPARTMENT_NAME");
+
+				Student student = new Student(studentNo, studentName, studentAddress, departmentName);
+
+				stdList.add(student);
+			}
+			
+		} finally {
+			JDBCTemplate.close(rs);
+			JDBCTemplate.close(pstmt);
+		}
+		return stdList;
+	}
+
+}
 
 
 
