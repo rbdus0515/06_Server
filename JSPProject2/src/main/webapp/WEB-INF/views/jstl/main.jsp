@@ -49,7 +49,7 @@
 	<a href="student/selectArch">workbook에서 건축공학과인 학생 조회하기</a>
 	
 	<form action="student/selectOne" method="post">
-		<input type="text name=deptName">
+		<input type="text" name="deptName">
 		<button>찾기</button>
 	</form>
 	
@@ -149,7 +149,7 @@
 		- escapeXml="false" : html 태그 해석 O
 	</pre>
 	
-	<c:set var="temp" value="<h1>곧 점심시간</body>h1>" />
+	<c:set var="temp" value="<h1>곧 점심시간</body><h1>" />
 	
 	html 태그 해석 X : <c:out value="${temp}" />
 	

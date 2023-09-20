@@ -23,7 +23,7 @@ public class SelectOneController extends HttpServlet{
 		StudentService service = new StudentService();
 
 		try {
-			String deptName = req.getParameter("daptName"); // 입력한 과
+			String deptName = req.getParameter("deptName"); // 입력한 과
 			
 			List<Student> stdList = service.selectOne(deptName);
 			
