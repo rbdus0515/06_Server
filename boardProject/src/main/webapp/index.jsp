@@ -70,7 +70,7 @@
 						<article class="login-area">
 						
 							<a href="#">
-								<img src="/resources/images/user.png">
+								<img id="memberProfile" src="/resources/images/user.png">
 							</a>
 							
 							<div class="my-info">

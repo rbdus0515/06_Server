@@ -46,6 +46,13 @@ public class LoginController extends HttpServlet{
 				// session 만료 시간 지정 (초단위 지정)
 				session.setMaxInactiveInterval(5);
 				
+				
+				// forward : 요청 처리 후 자체적인 화면이 존재하여
+				//			이를 이용해서 응답
+				
+				// redirect : 요청 처리 후 자체적인 화면이 없어서
+				// 			화면이 있는 다른 요청을 다시 호출(요청)
+				
 				resp.sendRedirect("/"); // 메인 페이지 재요청
 				
 			} else { // 실패
