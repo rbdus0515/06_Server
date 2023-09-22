@@ -75,8 +75,8 @@
 							
 							<div class="my-info">
 								<div>
-									<a href="#" id="nickname"></a>
-									<a href="#" id="logoutBtn">로그아웃</a>
+									<a href="#" id="nickname">${sessionScope.loginMember.memberNickname}</a>
+									<a href="/member/logout" id="logoutBtn">로그아웃</a>
 								</div>
 							
 								<p></p>

@@ -13,7 +13,7 @@
 	<section>
 		<section class="search-area">
 			<!-- form 내부 input 태그 값을 서버 또는 페이지로 전달 -->
-			<form action="#" name="seardch-form">
+			<form action="/member/search" name="seardch-form">
 
 				<!-- fieldset : form 내부에서 input 을 종류별로 믂는 용도로 자주 사용 -->
 				<fieldset>
@@ -21,7 +21,7 @@
                                 브라우저에 의해 다르게 표현돨될 수 있음-->
 					<!-- autocomplete : HTML 기본 자동완성 X -->
 					<input type="search" id="query" name="query" autocomplete="off"
-						placeholder="검색어를 입력해주세요.">
+						placeholder="회원을 닉네임으로 입력해주세요.">
 
 					<button id="searchBtn" class="fa-solid fa-magnifying-glass"></button>
 					

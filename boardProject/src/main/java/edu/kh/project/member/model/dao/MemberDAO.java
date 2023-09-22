@@ -77,6 +77,38 @@ public class MemberDAO {
 		return loginMember;
 	}
 
+	public Member search(Connection conn, String inputNickname) throws Exception {
+		
+		Member searchMember = null;
+		
+		try {
+			
+			String sql = prop.getProperty("search");
+			
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setString(1, inputNickname);
+			
+			rs = pstmt.executeQuery();
+			
+			if(rs.next()) {
+				
+				searchMember = new Member();
+				
+				searchMember.setMemberNickname(rs.getString(1));
+				searchMember.setMemberEmail(rs.getString(2));
+				searchMember.setMemberTel(rs.getString(3));
+			}
+			
+		} finally {
+			JDBCTemplate.close(rs);
+			JDBCTemplate.close(pstmt);
+		}
+		
+		
+		return searchMember;
+	}
+
 }
 
 

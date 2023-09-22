@@ -26,4 +26,22 @@ public class MemberService {
 		return loginMember;
 	}
 
+	/** 닉네임으로 유저 검색
+	 * @param inputNickname
+	 * @return
+	 * @throws Exception 
+	 */
+	public Member search(String inputNickname) throws Exception {
+
+		Connection conn = getConnection();
+		
+		Member searchMember = dao.search(conn, inputNickname);
+		
+		close(conn);
+		
+		return searchMember;
+	}
+
+
+
 }
