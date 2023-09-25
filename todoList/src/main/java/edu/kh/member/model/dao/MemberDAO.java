@@ -48,6 +48,7 @@ public class MemberDAO {
 			rs = pstmt.executeQuery();
 			
 			if(rs.next()) {
+				
 				loginMember = new Member();
 				
 				loginMember.setMemberNo(rs.getInt(1));
@@ -65,26 +66,7 @@ public class MemberDAO {
 		return loginMember;
 	}
 
-	public Member signup(Connection conn, String inputId, String inputPw, String inputNickname) throws Exception {
 	
-		int result = 0;
-		
-		try {
-			String sql = prop.getProperty("signup");
-			
-			pstmt = conn.prepareStatement(sql);
-			
-			pstmt.setString(1, inputId);
-			pstmt.setString(2, inputPw);
-			pstmt.setString(3, inputNickname);
-			
-			result = pstmt.executeUpdate();
-		} finally {
-			close(pstmt);
-		}
-		
-		return result;
-	}
 
 	
 

@@ -28,6 +28,8 @@ public class LoginController extends HttpServlet{
 			
 			Member loginMember = service.login(inputId, inputPw);
 			
+			System.out.println(loginMember);
+			
 			HttpSession session = req.getSession();
 			
 			if(loginMember != null) {

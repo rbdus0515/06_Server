@@ -22,15 +22,5 @@ public class MemberService {
 		return loginMember;
 	}
 
-	public Member signup(String inputId, String inputPw, String inputNickname) throws Exception {
-		
-		Connection conn = getConnection();
-		
-		int result= dao.signup(conn, inputId, inputPw, inputNickname);
-		
-		
-		close(conn);
-		
-		return result;
-	}
+
 }
