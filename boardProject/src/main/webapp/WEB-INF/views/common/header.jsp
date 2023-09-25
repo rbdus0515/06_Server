@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+    
+<link rel="stylesheet" href="/resources/css/main-style.css" type="text/css">
 
 <header>
 	<!-- 클릭 시 메인페이지로 이동하는 로고 -->
@@ -13,7 +15,7 @@
 	<section>
 		<section class="search-area">
 			<!-- form 내부 input 태그 값을 서버 또는 페이지로 전달 -->
-			<form action="/member/search" name="seardch-form">
+			<form action="/search" method="GET" name="seardch-form">
 
 				<!-- fieldset : form 내부에서 input 을 종류별로 믂는 용도로 자주 사용 -->
 				<fieldset>

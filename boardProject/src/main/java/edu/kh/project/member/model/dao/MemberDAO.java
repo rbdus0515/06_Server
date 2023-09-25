@@ -6,9 +6,11 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Properties;
 
-import edu.kh.project.common.JDBCTemplate;
+import static edu.kh.project.common.JDBCTemplate.*;
 import edu.kh.project.member.model.dto.Member;
 
 public class MemberDAO {
@@ -71,42 +73,45 @@ public class MemberDAO {
 			}
 			
 		} finally {
-			JDBCTemplate.close(rs);
-			JDBCTemplate.close(pstmt);
+			close(rs);
+			close(pstmt);
 		}
 		return loginMember;
 	}
 
-	public Member search(Connection conn, String inputNickname) throws Exception {
+	public List<Member> searchMember(Connection conn, String query) throws Exception {
 		
-		Member searchMember = null;
-		
+		List<Member> memberList = new ArrayList<Member>();
+
 		try {
 			
-			String sql = prop.getProperty("search");
-			
+			String sql = prop.getProperty("searchMember");
+
 			pstmt = conn.prepareStatement(sql);
 			
-			pstmt.setString(1, inputNickname);
+			pstmt.setString(1, query);
 			
 			rs = pstmt.executeQuery();
 			
-			if(rs.next()) {
+			while(rs.next()) {
 				
-				searchMember = new Member();
+				Member member = new Member();
 				
-				searchMember.setMemberNickname(rs.getString(1));
-				searchMember.setMemberEmail(rs.getString(2));
-				searchMember.setMemberTel(rs.getString(3));
+				member.setMemberNo(rs.getInt("MEMBER_NO"));
+				member.setMemberNickname(rs.getString("MEMBER_NICKNAME"));
+				member.setMemberEmail(rs.getString("MEMBER_EMAIL"));
+				member.setMemberTel(rs.getString("MEMBER_TEL"));
+				
+				memberList.add(member);
 			}
+
 			
 		} finally {
-			JDBCTemplate.close(rs);
-			JDBCTemplate.close(pstmt);
+			close(rs);
+			close(pstmt);
 		}
 		
-		
-		return searchMember;
+		return memberList;
 	}
 
 }
