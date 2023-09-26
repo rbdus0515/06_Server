@@ -21,8 +21,8 @@
 			<c:when test="${empty sessionScope.loginMember}">
 
 				<h1>투 두 리스트 로그인</h1>
-				<form action="/login" method="post" id="login">
-					<section id="login-page">
+				<section id="login-page">
+					<form action="/login" method="post" id="login">
 						<section>
 							<p>아이디</p>
 							<input type="text" name="inputId" id="inputId">
@@ -34,16 +34,18 @@
 						<section>
 							<button id="login-btn">로그인</button>
 						</section>
+					</form>
+					<form action="/signup" method="get" name="signup-form">
 						<section>
 							<a href="/signup" id="signup">회원가입</a>
 						</section>
-					</section>
-				</form>
+					</form>
+				</section>
 			</c:when>
 
 			<%-- 로그인 했을 때 --%>
 			<c:otherwise>
-				<h1>${sesscionScope.loginMember.memberNickname}의투 두 리스트</h1>
+				<h1>${sesscionScope.loginMember.memberNickname}의투두리스트</h1>
 
 				<div>
 					<a href="#" id="nickname">${sesscionScope.loginMember.memberNickname}</a>
