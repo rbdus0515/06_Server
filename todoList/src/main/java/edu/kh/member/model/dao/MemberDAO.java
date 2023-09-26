@@ -1,4 +1,4 @@
-	 package edu.kh.member.model.dao;
+package edu.kh.member.model.dao;
 
 import java.io.FileInputStream;
 import java.sql.Connection;
@@ -64,6 +64,28 @@ public class MemberDAO {
 		}
 		
 		return loginMember;
+	}
+
+	public int singup(Connection conn, String inputId, String inputPw, String inputNickname) throws Exception {
+
+		int result = 0;
+		
+		try {
+			String sql = prop.getProperty("signup");
+			
+			pstmt = conn.prepareStatement(sql);
+			
+			pstmt.setString(1, inputId);
+			pstmt.setString(2, inputPw);
+			pstmt.setString(3, inputNickname);
+			
+			result = pstmt.executeUpdate();
+			
+		} finally {
+			close(pstmt);
+		}
+		
+		return result;
 	}
 
 	

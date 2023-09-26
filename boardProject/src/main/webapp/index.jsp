@@ -1,17 +1,19 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-    
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+	pageEncoding="UTF-8"%>
+
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
 <!DOCTYPE html>
 <html>
 <head>
-	<meta charset="UTF-8">
-	<title>프로젝트</title>
-	
-	<link rel="stylesheet" href="/resources/css/main-style.css" type="text/css">
-	
-	<script src="https://kit.fontawesome.com/eb7f8e3a35.js" crossorigin="anonymous"></script>
+<meta charset="UTF-8">
+<title>프로젝트</title>
+
+<link rel="stylesheet" href="/resources/css/main-style.css"
+	type="text/css">
+
+<script src="https://kit.fontawesome.com/eb7f8e3a35.js"
+	crossorigin="anonymous"></script>
 </head>
 <body>
 
@@ -27,67 +29,68 @@
 			- 다른 jsp파일을 코드를 현재 위치에 추가
 		
 		--%>
-		
-		<jsp:include page="/WEB-INF/views/common/header.jsp"/>
+
+		<jsp:include page="/WEB-INF/views/common/header.jsp" />
 
 		<section class="content">
 			<section class="content-1"></section>
 			<!-- 아이디, 비밀번호, 로그인 버튼 영역 -->
 			<section class="content-2">
-			
+
 				<c:choose>
 					<%-- 로그인이 안되었을때 --%>
 					<%-- EL empty : 비어있거나 null이면 true --%>
 					<c:when test="${empty sessionScope.loginMember}">
-					
-					<form action="/member/login" method="post" name="login-form" id="loginFrm">
 
-					<fieldset class="id-pw-area">
-						<section>
-							<input type="text" name="inputEmail" placeholder="이메일"> <input
-								type="password" name="inputPw" placeholder="비밀번호">
-						</section>
+						<form action="/member/login" method="post" name="login-form"
+							id="loginFrm">
 
-						<section>
-							<button>로그인</button>
-						</section>
-					</fieldset>
+							<fieldset class="id-pw-area">
+								<section>
+									<input type="text" name="inputEmail" placeholder="이메일">
+									<input type="password" name="inputPw" placeholder="비밀번호">
+								</section>
 
-					<label> <input type="checkbox" name="saveId"> 아이디
-						저장
-					</label>
+								<section>
+									<button>로그인</button>
+								</section>
+							</fieldset>
 
-					<!-- 회원가입 / Id / Pw 찾기 영역 -->
-					<section class="signup-find-area">
-						<a href="#">회원가입</a> <span>|</span> <a href="#">ID/PW 찾기</a>
-					</section>
+							<label> <input type="checkbox" name="saveId"> 아이디
+								저장
+							</label>
 
-				</form>
+							<!-- 회원가입 / Id / Pw 찾기 영역 -->
+							<section class="signup-find-area">
+								<a href="#">회원가입</a> <span>|</span> <a href="#">ID/PW 찾기</a>
+							</section>
+
+						</form>
 					</c:when>
-					
+
 					<%-- 로그인이 되었을때 --%>
 					<c:otherwise>
 						<article class="login-area">
-						
-							<a href="#">
-								<img id="memberProfile" src="/resources/images/user.png">
+
+							<a href="#"> <img id="memberProfile"
+								src="/resources/images/user.png">
 							</a>
-							
+
 							<div class="my-info">
 								<div>
 									<a href="#" id="nickname">${sessionScope.loginMember.memberNickname}</a>
 									<a href="/member/logout" id="logoutBtn">로그아웃</a>
 								</div>
-							
+
 								<p></p>
 							</div>
-							
+
 						</article>
-						
+
 					</c:otherwise>
 				</c:choose>
-			
-				
+
+
 
 
 			</section>
@@ -95,7 +98,7 @@
 
 	</main>
 
-	<jsp:include page="/WEB-INF/views/common/footer.jsp"/>
+	<jsp:include page="/WEB-INF/views/common/footer.jsp" />
 
 </body>
 </html>

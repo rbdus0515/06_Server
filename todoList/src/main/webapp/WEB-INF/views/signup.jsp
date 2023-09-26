@@ -3,14 +3,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="UTF-8">
-<title>회원가입</title>
+	<meta charset="UTF-8">
+	<title>회원가입</title>
 </head>
 <body>
 
 	<main>
 		<h1>회원가입</h1>
-		<form action="" method="">
+		<form action="/signup" method="post">
 			<section id="inputId">
 				아이디 <input type="text">
 			</section>

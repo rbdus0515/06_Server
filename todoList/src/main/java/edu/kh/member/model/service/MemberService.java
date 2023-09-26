@@ -23,4 +23,16 @@ public class MemberService {
 	}
 
 
+	public int singup(String inputId, String inputPw, String inputNickname) throws Exception {
+
+		Connection conn = getConnection();
+		
+		int result = dao.singup(conn, inputId, inputPw, inputNickname);
+		
+		close(conn);
+		
+		return result;
+	}
+
+
 }
