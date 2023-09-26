@@ -45,7 +45,7 @@
 
 			<%-- 로그인 했을 때 --%>
 			<c:otherwise>
-				<h1>${sesscionScope.loginMember.memberNickname}의투두리스트</h1>
+				<h1>${sesscionScope.loginMember.memberNickname}의 투두리스트</h1>
 
 				<div>
 					<a href="#" id="nickname">${sesscionScope.loginMember.memberNickname}</a>

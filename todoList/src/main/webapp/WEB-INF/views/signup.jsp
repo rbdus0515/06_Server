@@ -24,11 +24,12 @@
 				닉네임 <input type="text">
 			</section>
 			<section>
-				<a href="#">가입하기</a>
+				<a href="/signup">가입하기</a>
 			</section>
 		</form>
 
 	</main>
 
+	<script href="/resources/js/signup.js" type="text/javascript"></script>
 </body>
 </html>
