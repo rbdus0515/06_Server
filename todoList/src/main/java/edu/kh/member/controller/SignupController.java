@@ -43,7 +43,6 @@ public class SignupController extends HttpServlet{
 			if(result == 1) {
 				session.setAttribute("message", "회원가입 성공");
 				
-				
 				resp.sendRedirect("/");
 			} else {
 				session.setAttribute("message", "회원가입 실패");

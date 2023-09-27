@@ -86,13 +86,17 @@
 
 
 
+	<c:if test="${not empty sessionScope.message}">
 
+		<script>
+			// EL/JSTL 구문이 먼저 해석
+			// 문자열의 경우 따옴표가 없는 상태이니 옆에 붙여줘야함.
+			alert('${message}')
+		</script>
 
+		<c:remove var="message" scope="session" />
 
-
-
-
-
+	</c:if>
 
 
 </body>
