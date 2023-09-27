@@ -1,4 +1,4 @@
-const ckeckObj = {
+const checkObj = {
 	"inputId" : false,
 	"inputPw" : false,
 	"inputPwRe" : false,
@@ -14,14 +14,14 @@ let nicknameMassage = document.getElementById("nameMassage")
 
 inputId.addEventListener("change", () => {
 	
-	const regExp = /^[a-z][\w-_]{5,13}$)/;
+	const regExp = /^[a-z][\w-_]{5,13}$/;
 	
 	if(regExp.test(inputId.value)) {
 		inputId.style.backgroundColor = "green";
-		inputId.style.Color = "white";
+		inputId.style.color = "white";
 	} else {
 		inputId.style.backgroundColor = "red";
-		inputId.style.Color = "white";
+		inputId.style.color = "white";
 	}
 	
 });
@@ -80,24 +80,26 @@ inputNickname.addEventListener("change", () => {
 		nicknameMassage.innerText = "정상입력";
 		nicknameMassage.classList.add("confirm");
 		nicknameMassage.classList.remove("error");
-		ckeckObj.inputNickname = true;
+		checkObj.inputNickname = true;
 	} else {
 		nicknameMassage.innerText = "정상입력";
 		nicknameMassage.classList.add("error");
 		nicknameMassage.classList.remove("confirm");
-		ckeckObj.inputNickname = false;
+		checkObj.inputNickname = false;
 	}
 	
 });
 
-for(let key in ckeckObj) {
-	if(!checkObj[key]) {
-		return false;
+function validate() {
+	for(let key in checkObj) {
+		if(!checkObj[key]) {
+			return false;
+		}
 	}
-}
-alert("회원가입 완료!");
-return true;
+	alert("회원가입 완료!");
+	return true;
 
+}
 
 
 
